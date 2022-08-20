@@ -6,7 +6,12 @@
     "start": "next start"
   },
   "dependencies": {
+    "@fontsource/cabin": "^4.5.7",
+    "@fontsource/numans": "^4.5.9",
+    "daisyui": "^2.24.0",
     "next": "latest",
+    "next-seo": "^5.5.0",
+    "next-themes": "^0.2.0",
     "react": "18.1.0",
     "react-dom": "18.1.0"
   },
