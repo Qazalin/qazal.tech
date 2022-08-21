@@ -1,8 +1,6 @@
 import { BiHomeAlt } from "react-icons/bi";
 import { IoAppsOutline } from "react-icons/io5";
 import { ReactElement } from "react";
-import { FiTwitter } from "react-icons/fi";
-import { BsTwitch } from "react-icons/bs";
 import { BsCalendar4Event } from "react-icons/bs";
 import { useRouter } from "next/router";
 import classNames from "classnames";
@@ -19,7 +17,7 @@ export const Navbar = () => {
   ];
 
   return (
-    <div className="btm-nav top-0">
+    <div className="btm-nav h-full relative">
       {navbarSections.map((s, i) => (
         <button
           key={`nav-${i}`}

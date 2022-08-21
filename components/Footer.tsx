@@ -32,7 +32,7 @@ export const Footer = () => {
   ];
 
   return (
-    <div className="w-full h-12 fixed bottom-0 ">
+    <div className="w-full h-12 relative">
       <IoIosArrowDropup
         className={classNames(
           svgStyles,
