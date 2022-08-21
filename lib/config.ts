@@ -1,7 +1,6 @@
 import { DefaultSeoProps } from "next-seo";
 
 export const DEFAULT_SEO: DefaultSeoProps = {
-  title: "Qazal | Sofware Engineer",
   titleTemplate: "%s | Qazalin",
   description: "Qazal is a software engineer working in Web3.",
   openGraph: {
@@ -14,3 +13,5 @@ export const DEFAULT_SEO: DefaultSeoProps = {
     handle: "@qazalin",
   },
 };
+
+export const svgStyles = "text-lg md:text-xl lg:text-2xl";
