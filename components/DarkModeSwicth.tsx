@@ -11,11 +11,18 @@ export const DarkModeSwitch = () => {
   };
   return (
     <button onClick={toggleTheme} className="swap swap-rotate">
-      {isDark ? (
-        <BsSun className={svgStyles} />
-      ) : (
-        <BsMoon className={svgStyles} />
-      )}
+      <BsSun
+        className={classNames({
+          "text-lg md:text-xl lg:text-2xl": true,
+          invisible: !isDark,
+        })}
+      />
+      <BsMoon
+        className={classNames({
+          "text-lg md:text-xl lg:text-2xl": true,
+          invisible: isDark,
+        })}
+      />
     </button>
   );
 };
