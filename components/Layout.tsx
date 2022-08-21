@@ -4,11 +4,11 @@ import { Footer } from "./Footer";
 
 export const Layout: React.FC<PropsWithChildren<{}>> = ({ children }) => {
   return (
-    <div className="w-[100vw] h-[100vh] overflow-hidden flex flex-col">
+    <div className="w-[100vw] h-[100vh] overflow-hidden flex flex-col prose max-w-full">
       <div className="w-full h-12">
         <Navbar />
       </div>
-      <div className="w-[100vw] h-[calc(100vh-5rem)] overflow-y-auto">
+      <div className="w-[100vw] h-[calc(100vh-5rem)] overflow-y-auto flex flex-col justify-center items-center p-2 md:p-4 lg:p-6">
         {children}
       </div>
       <Footer />

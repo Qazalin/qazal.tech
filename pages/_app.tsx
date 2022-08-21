@@ -14,10 +14,7 @@ import { Layout } from "components/Layout";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <ThemeProvider
-      defaultTheme="system"
-      value={{ dark: "black", light: "light" }}
-    >
+    <ThemeProvider defaultTheme="system">
       <DefaultSeo {...DEFAULT_SEO} />
       <Layout>
         <Component {...pageProps} />
