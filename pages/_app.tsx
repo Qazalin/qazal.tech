@@ -16,7 +16,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider
       defaultTheme="system"
-      value={{ dark: "black", light: "lofi" }}
+      value={{ dark: "black", light: "light" }}
     >
       <DefaultSeo {...DEFAULT_SEO} />
       <Layout>
