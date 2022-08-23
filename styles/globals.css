@@ -4,6 +4,10 @@
 
 [data-theme=light] {
     --bc: 100 % 0%;
+    --svg-color: #000;
+}
+[data-theme=dark] {
+    --svg-color: #fff;
 }
 
 @layer base {
@@ -24,3 +28,5 @@
     @apply font-body;
   }
 }
+
+
