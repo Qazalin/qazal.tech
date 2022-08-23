@@ -7,6 +7,7 @@
   },
   "dependencies": {
     "@fontsource/cabin": "^4.5.7",
+    "@fontsource/handlee": "^4.5.8",
     "@fontsource/numans": "^4.5.9",
     "classnames": "^2.3.1",
     "daisyui": "^2.24.0",

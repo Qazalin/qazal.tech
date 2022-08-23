@@ -7,6 +7,11 @@
   resolved "https://registry.yarnpkg.com/@fontsource/cabin/-/cabin-4.5.7.tgz#bcf1ef81ecf589f71accad9c412f55d8c047af0b"
   integrity sha512-UXqN46WKawd9uCuMqSdt6UJXo32gqeJUiuIvZLUfCe6reXBmnkyoG+V62UVEf/Dmw9TII6DNwJujpa0rgiAHjQ==
 
+"@fontsource/handlee@^4.5.8":
+  version "4.5.8"
+  resolved "https://registry.yarnpkg.com/@fontsource/handlee/-/handlee-4.5.8.tgz#c12169c91f8b5bca340cf52b72d20df6c37b5af0"
+  integrity sha512-fieMmX5RSr2ms02iNBrhwcIVRj42ZunfbgV6yzVPT1Is5J7Gx8TSFJHA8viWD9buo53RxQb5oLh1ztAvjzbAJQ==
+
 "@fontsource/numans@^4.5.9":
   version "4.5.9"
   resolved "https://registry.yarnpkg.com/@fontsource/numans/-/numans-4.5.9.tgz#47b93472bc6e9673cc6753c1d1620173542390ec"

@@ -8,6 +8,7 @@ import { DEFAULT_SEO } from "lib/config";
 // Styles
 import "@fontsource/numans";
 import "@fontsource/cabin";
+import "@fontsource/handlee";
 import "../styles/globals.css";
 import { ThemeProvider } from "next-themes";
 import { Layout } from "components/Layout";

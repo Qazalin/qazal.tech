@@ -8,7 +8,7 @@ export const Layout: React.FC<PropsWithChildren<{}>> = ({ children }) => {
       <div className="w-full h-12">
         <Navbar />
       </div>
-      <div className="w-[100vw] h-[calc(100vh-5rem)] overflow-y-auto flex flex-col justify-center items-center p-2 md:p-4 lg:p-6">
+      <div className="overflow-x-hidden overflow-y-auto p-2 md:p-4 lg:p-8 flex flex-col items-center">
         {children}
       </div>
       <Footer />
