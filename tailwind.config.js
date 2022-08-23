@@ -8,8 +8,7 @@ module.exports = {
     extend: {
       fontFamily: {
         heading: ["Numans", "sans-serif"],
-        body: ["Cabin", "sans-serif"],
-        handWriting: ["Handlee", "cursive"],
+        handWriting: ["Virgil", "Handlee", "cursive"],
       },
     },
   },

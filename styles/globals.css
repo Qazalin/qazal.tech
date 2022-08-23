@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+
+@font-face {
+    font-family: "Virgil";
+    src: url("/Virgil.woff2");
+}
+
 [data-theme=light] {
     --bc: 100 % 0%;
     --svg-color: #000;
@@ -22,11 +28,10 @@
     @apply font-heading;
   }
   p {
-    @apply font-body;
+    @apply font-sans;
   }
   .btn {
-    @apply font-body;
+    @apply font-sans;
   }
 }
-
 

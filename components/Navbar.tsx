@@ -11,8 +11,14 @@ export const Navbar = () => {
   const router = useRouter();
 
   const navbarSections: { slug: string; icon: ReactElement }[] = [
-    { slug: "/", icon: <BiHomeAlt className={svgStyles} /> },
-    { slug: "content", icon: <IoAppsOutline className={svgStyles} /> },
+    {
+      slug: "/",
+      icon: <BiHomeAlt className={classNames(svgStyles)} />,
+    },
+    {
+      slug: "content",
+      icon: <IoAppsOutline className={classNames(svgStyles)} />,
+    },
     { slug: "chat", icon: <BsCalendar4Event className={svgStyles} /> },
   ];
 

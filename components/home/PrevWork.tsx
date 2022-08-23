@@ -1,30 +1,19 @@
-import { ReactElement } from "react";
-import { Braintrust, NFTGo, Thirdwave } from "components/icons";
+import { WorkStory } from "./WorkStory";
+import { workStory } from "lib/props";
 
 export const PrevWork = () => {
-  const companies: { logo: ReactElement; url: string }[] = [
-    {
-      logo: <Braintrust />,
-      url: "https://usebraintrust.com",
-    },
-    {
-      logo: <Thirdwave />,
-      url: "https://thirdwavelabs.com/",
-    },
-    {
-      logo: <NFTGo />,
-      url: "https://nftgo.io",
-    },
-  ];
   return (
     <div>
       <h3>Previuos work</h3>
-      <div className="flex justify-between content-center items-center">
-        {companies.map(({ logo, url }) => (
-          <a href={url} target="_blank" rel="noopener noreferrer">
-            {logo}
-          </a>
-        ))}
+      <div className="flex flex-col">
+        {workStory.map((w, i) => {
+          return (
+            <>
+              <WorkStory {...w} key={`work-story-${i}`} />
+              {i !== workStory.length - 1 && <hr className="divider" />}
+            </>
+          );
+        })}
       </div>
     </div>
   );
