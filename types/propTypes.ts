@@ -10,3 +10,8 @@ export type WorkStoryProps = {
   skills: string[];
   description: string;
 };
+
+export interface ContentProps {
+  title: string;
+  svgTH: JSX.Element;
+}

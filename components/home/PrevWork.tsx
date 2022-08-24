@@ -11,7 +11,6 @@ export const PrevWork = () => {
           return (
             <div key={`work-story-${i}`}>
               <WorkStory {...w} />
-              {i !== workStory.length - 1 && <hr />}
             </div>
           );
         })}
