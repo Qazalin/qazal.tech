@@ -23,10 +23,10 @@ export const WorkStory: React.FC<WorkStoryProps> = ({
           </p>
         </div>
       </div>
-      <div className="flex space-x-3">
+      <div className="flex space-x-3 max-w-[100vw] overflow-x-scroll">
         {skills.map((s, i) => (
           <p
-            className="text-sm text-primary font-bold capitalize hover:text-base-300"
+            className="text-[0.5rem] sm:text-sm text-primary font-bold capitalize hover:text-base-300"
             key={`skill-${company}-${i}`}
           >
             {s}
