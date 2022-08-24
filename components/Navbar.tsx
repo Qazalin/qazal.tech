@@ -13,17 +13,17 @@ export const Navbar = () => {
   const navbarSections: { slug: string; icon: ReactElement }[] = [
     {
       slug: "/",
-      icon: <BiHomeAlt className={classNames(svgStyles)} />,
+      icon: <BiHomeAlt className={"text-lg md:text-xl lg:text-2xl"} />,
     },
     {
-      slug: "content",
+      slug: "/content",
       icon: <IoAppsOutline className={classNames(svgStyles)} />,
     },
-    { slug: "chat", icon: <BsCalendar4Event className={svgStyles} /> },
+    { slug: "/chat", icon: <BsCalendar4Event className={svgStyles} /> },
   ];
 
   return (
-    <div className="btm-nav h-full relative">
+    <div className="btm-nav relative">
       {navbarSections.map((s, i) => (
         <button
           key={`nav-${i}`}

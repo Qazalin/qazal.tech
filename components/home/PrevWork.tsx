@@ -10,7 +10,7 @@ export const PrevWork = () => {
           return (
             <>
               <WorkStory {...w} key={`work-story-${i}`} />
-              {i !== workStory.length - 1 && <hr className="divider" />}
+              {i !== workStory.length - 1 && <hr />}
             </>
           );
         })}

@@ -10,7 +10,7 @@ export const WorkStory: React.FC<WorkStoryProps> = ({
   description,
 }) => {
   return (
-    <div>
+    <>
       <div className="flex items-center space-x-4 max-h-fit">
         <div className="h-10 md:h-14 lg:h-20">{logo}</div>
         <div>
@@ -34,6 +34,6 @@ export const WorkStory: React.FC<WorkStoryProps> = ({
         ))}
       </div>
       <div>{description}</div>
-    </div>
+    </>
   );
 };

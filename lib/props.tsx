@@ -15,7 +15,7 @@ export const workStory: WorkStoryProps[] = [
 allowed me to move fast and ship features.
 At Thirdwave, I built a full-stack data analytics
 solution that allowed game developers to extract
-business insights from blockchain`,
+business insights from the blockchain.`,
   },
   {
     title: "Data analyst",
