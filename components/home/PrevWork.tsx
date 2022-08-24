@@ -1,5 +1,6 @@
 import { WorkStory } from "./WorkStory";
 import { workStory } from "lib/props";
+import React from "react";
 
 export const PrevWork = () => {
   return (
@@ -8,10 +9,10 @@ export const PrevWork = () => {
       <div className="flex flex-col">
         {workStory.map((w, i) => {
           return (
-            <>
-              <WorkStory {...w} key={`work-story-${i}`} />
+            <div key={`work-story-${i}`}>
+              <WorkStory {...w} />
               {i !== workStory.length - 1 && <hr />}
-            </>
+            </div>
           );
         })}
       </div>

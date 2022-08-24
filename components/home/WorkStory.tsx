@@ -11,7 +11,7 @@ export const WorkStory: React.FC<WorkStoryProps> = ({
 }) => {
   return (
     <>
-      <div className="flex items-center space-x-4 max-h-fit">
+      <div className="flex items-center space-x-4">
         <div className="h-10 md:h-14 lg:h-20">{logo}</div>
         <div>
           <h4 className="capitalize">{title}</h4>
