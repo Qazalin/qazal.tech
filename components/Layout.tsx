@@ -8,7 +8,7 @@ export const Layout: React.FC<PropsWithChildren<{}>> = ({ children }) => {
       <div className="w-full h-fit">
         <Navbar />
       </div>
-      <div className="overflow-x-hidden overflow-y-auto flex flex-col items-center">
+      <div className="overflow-x-hidden overflow-y-auto flex flex-col items-center px-4 md:px-8 lg:px-16">
         {children}
       </div>
       <div className="w-full h-fit">

@@ -34,3 +34,6 @@
     @apply font-sans;
   }
 }
+.small-svg  > svg {
+  max-width: 200px;
+}

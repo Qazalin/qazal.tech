@@ -1,6 +1,6 @@
 import { ReactElement, useState } from "react";
 import { FiTwitter, FiGithub } from "react-icons/fi";
-import { BsTwitch, BsTwitter } from "react-icons/bs";
+import { BsTwitch } from "react-icons/bs";
 import { svgStyles } from "lib/config";
 import { IoIosArrowDropdown, IoIosArrowDropup } from "react-icons/io";
 import classNames from "classnames";

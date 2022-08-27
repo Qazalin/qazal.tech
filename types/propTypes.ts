@@ -11,7 +11,13 @@ export type WorkStoryProps = {
   description: string;
 };
 
-export interface ContentProps {
+export interface ContentPreviewProps {
   title: string;
   svgTH: JSX.Element;
+}
+
+export interface MediaPreviewProps extends ContentPreviewProps {
+  title: string;
+  svgTH: JSX.Element;
+  platform: "twitch" | "twitter";
 }

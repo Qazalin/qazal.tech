@@ -9,7 +9,6 @@ const Content: NextPage = () => {
         <span>learn,</span> <span>build,</span> <span>share,</span>{" "}
         <span>repeat.</span>
       </h2>
-      <ContentGrid />
     </div>
   );
 };
