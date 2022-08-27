@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { ContentGrid } from "components/content/ContentGrid";
+import { AppPreview } from "components/content/AppPreview";
 import type { NextPage } from "next";
 
 const Content: NextPage = () => {
@@ -9,6 +9,14 @@ const Content: NextPage = () => {
         <span>learn,</span> <span>build,</span> <span>share,</span>{" "}
         <span>repeat.</span>
       </h2>
+      <div className="w-full h-full grid grid-cols-1 md:grid-cols-2">
+        <div className="grid grid-cols-2 gap-2">
+          <AppPreview platform="twitter" />
+          <AppPreview platform="twitch" />
+          <AppPreview platform="blog" />
+          <AppPreview platform="github" />
+        </div>
+      </div>
     </div>
   );
 };
