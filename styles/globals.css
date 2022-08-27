@@ -17,6 +17,16 @@
 }
 
 @layer base {
+    [data-theme=light]:root {
+        --text2: ##d6d3d1;
+        --text3: #a8a29e;
+        --text4: #78716c;
+    }
+    [data-theme=dark]:root {
+        --text2: 41 37 36;
+        --text3: 68 64 60;
+        --text4: 87 83 78;
+    }
   h1 {
     @apply font-heading;
   }
