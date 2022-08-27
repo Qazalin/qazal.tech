@@ -11,7 +11,8 @@ const CustomContent = () => {
       return <div className="h-[100vh]" />;
     }
   }
-  return <PlatformLayout platform={platform}></PlatformLayout>;
+
+  return <PlatformLayout platform="twitter"></PlatformLayout>;
 };
 
 export default CustomContent;

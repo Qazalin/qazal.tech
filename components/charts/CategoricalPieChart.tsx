@@ -1,15 +1,6 @@
 import React, { ReactText } from "react";
-import {
-  Pie,
-  Cell,
-  PieChart,
-  Legend,
-  LegendProps,
-  ResponsiveContainer,
-  Tooltip,
-  TooltipProps,
-} from "recharts";
-import { addressFormatter, numberFormatter } from "utils";
+import { Pie, Cell, PieChart, ResponsiveContainer, Tooltip } from "recharts";
+import { numberFormatter } from "utils";
 
 export const CategoricalPieChart: React.FC<{
   data: any;
@@ -37,9 +28,9 @@ export const CustomTooltip: React.FC<{ active?: boolean; payload?: any[] }> = ({
     const x = payload[0].payload.x;
     return (
       <div className="bg-gray-200 dark:bg-gray-800 p-5 rounded-md shadow-xl">
-        <p className="capitalize">{`${
-          x.startsWith("0x") ? addressFormatter(x) : x
-        } : ${numberFormatter(payload[0].value)}`}</p>
+        <p className="capitalize">{`${x} : ${numberFormatter(
+          payload[0].value
+        )}`}</p>
       </div>
     );
   }
