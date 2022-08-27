@@ -1,9 +1,7 @@
-import classNames from "classnames";
 import { AppPreview } from "components/content/AppPreview";
 import { ContentStats } from "components/content/ContentStats";
 import { Quote } from "components/content/Quote";
 import type { NextPage } from "next";
-import { IoQrCodeOutline } from "react-icons/io5";
 
 const Content: NextPage = () => {
   return (
@@ -13,7 +11,7 @@ const Content: NextPage = () => {
         <span>repeat.</span>
       </h2>
       <div className="h-full grid grid-cols-1 md:grid-cols-2 gap-2 grid-rows-2">
-        <div className="grid grid-cols-2 gap-2">
+        <div className="grid grid-cols-2 gap-2 h-72 self-center">
           <AppPreview platform="twitter" />
           <AppPreview platform="twitch" />
           <AppPreview platform="blog" />

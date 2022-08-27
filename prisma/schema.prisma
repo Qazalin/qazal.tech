@@ -1,0 +1,46 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["referentialIntegrity"]
+}
+
+datasource db {
+  provider             = "mysql"
+  url                  = env("DATABASE_URL")
+  referentialIntegrity = "prisma"
+}
+
+model post {
+  slug        String   @unique
+  title       String
+  content     String
+  publishedAt DateTime
+}
+
+model tweet {
+  id            String        @id @default(cuid())
+  text          String
+  mediaKey      String // Image, gif or video
+  createdAt     DateTime      @default(now())
+  organicMetric OrganicMetric @relation(fields: [organicMetricId], references: [id])
+
+  organicMetricId String
+}
+
+model githubProject {
+  id              String        @id @default(cuid())
+  text            String
+  mediaKey        String // Image, gif or video
+  createdAt       DateTime      @default(now())
+  organicMetric   OrganicMetric @relation(fields: [organicMetricId], references: [id])
+  organicMetricId String
+}
+
+model OrganicMetric {
+  id               String          @id @default(cuid())
+  impression_count Int
+  like_count       Int
+  retweet_count    Int
+  url_link_clicks  Int
+  tweet            tweet[]
+  githubProject    githubProject[]
+}

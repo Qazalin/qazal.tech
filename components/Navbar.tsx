@@ -12,7 +12,7 @@ export const Navbar = () => {
 
   const navbarSections: { slug: string; icon: ReactElement }[] = [
     {
-      slug: "/",
+      slug: "/home",
       icon: <BiHomeAlt className={"text-lg md:text-xl lg:text-2xl"} />,
     },
     {
@@ -28,7 +28,7 @@ export const Navbar = () => {
         <button
           key={`nav-${i}`}
           className={classNames({
-            "border-b-2": router.route === s.slug,
+            "border-b-2": router.route.startsWith(s.slug),
           })}
           onClick={() => router.push(s.slug)}
         >
