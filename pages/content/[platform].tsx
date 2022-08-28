@@ -12,7 +12,7 @@ const CustomContent = () => {
     }
   }
 
-  return <PlatformLayout platform="twitter"></PlatformLayout>;
+  return <PlatformLayout platform={platform}></PlatformLayout>;
 };
 
 export default CustomContent;

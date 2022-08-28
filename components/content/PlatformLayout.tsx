@@ -1,11 +1,9 @@
 import { getPlatformInfo } from "utils/platforms";
 import { BiArrowBack } from "react-icons/bi";
-import { DESCRIPTIONS } from "lib/constants";
+import { DESCRIPTIONS, LAYOUTS } from "lib/constants";
 import { useRouter } from "next/router";
 
-export const PlatformLayout: React.FC<{ platform: string }> = ({
-  platform,
-}) => {
+export const PlatformLayout: React.FC<{ platform: any }> = ({ platform }) => {
   const router = useRouter();
 
   return (
@@ -18,6 +16,7 @@ export const PlatformLayout: React.FC<{ platform: string }> = ({
       </div>
       <h1 className="mb-0 lg:mb-0 xl:mb-0 2xl:mb-0">{platform}</h1>
       <p className="font-handWriting">{DESCRIPTIONS[platform]}</p>
+      {LAYOUTS[platform]}
     </div>
   );
 };
