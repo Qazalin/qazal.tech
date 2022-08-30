@@ -6,7 +6,6 @@ const Id = () => {
   return (
     <div className="h-[100vh] w-full">
       <ProjectPage {...projectPageProps} />
-      <Timeline />
     </div>
   );
 };
