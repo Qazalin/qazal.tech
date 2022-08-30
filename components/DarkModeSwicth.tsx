@@ -1,7 +1,6 @@
 import { useTheme } from "next-themes";
 import { BsMoon, BsSun } from "react-icons/bs";
 import { svgStyles } from "lib/config";
-import classNames from "classnames";
 import { useEffect, useState } from "react";
 
 export const DarkModeSwitch = () => {
@@ -21,12 +20,15 @@ export const DarkModeSwitch = () => {
     }
   }
   return (
-    <button onClick={switchTheme} className="swap swap-rotate">
+    <button
+      onClick={switchTheme}
+      className="relative justify-center items-center flex basis-full h-full cursor-pointer"
+    >
       {mounted &&
         (isDark ? (
-          <BsMoon className={svgStyles} />
-        ) : (
           <BsSun className={svgStyles} />
+        ) : (
+          <BsMoon className={svgStyles} />
         ))}
     </button>
   );

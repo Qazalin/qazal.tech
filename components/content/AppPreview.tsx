@@ -7,7 +7,7 @@ export const AppPreview: React.FC<{ platform: string }> = ({ platform }) => {
 
   return (
     <div
-      className={`${color} rounded-md p-2 flex flex-col justify-center items-center not-prose cursor-pointer`}
+      className={`bg-zinc-100 dark:bg-zinc-900 rounded-md p-2 flex flex-col justify-center items-center not-prose cursor-pointer`}
       onClick={() => router.push(`/content/${platform}`)}
     >
       {icon}

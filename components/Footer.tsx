@@ -44,7 +44,7 @@ export const Footer = () => {
       />
       <div
         className={classNames({
-          "flex border-t-2 border-t-base-300 items-center justify-around h-full w-full":
+          "flex border-t-2 border-t-zinc-300 dark:border-t-zinc-700 items-center justify-around h-full w-full":
             true,
           invisible: !showFooter,
         })}

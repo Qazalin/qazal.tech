@@ -15,7 +15,7 @@ import { Layout } from "components/Layout";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <ThemeProvider defaultTheme="system">
+    <ThemeProvider attribute="class">
       <DefaultSeo {...DEFAULT_SEO} />
       <Layout>
         <Component {...pageProps} />

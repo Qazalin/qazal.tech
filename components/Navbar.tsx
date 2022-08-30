@@ -23,12 +23,15 @@ export const Navbar = () => {
   ];
 
   return (
-    <div className="btm-nav relative">
+    <div className="flex justify-around w-full items-center pt-2 relative h-16">
       {navbarSections.map((s, i) => (
         <button
           key={`nav-${i}`}
           className={classNames({
-            "border-b-2": router.route.startsWith(s.slug),
+            "border-b-2 border-b-gray-600 dark:border-b-gray-300":
+              router.route.startsWith(s.slug),
+            "relative justify-center items-center flex basis-full h-full cursor-pointer":
+              true,
           })}
           onClick={() => router.push(s.slug)}
         >
