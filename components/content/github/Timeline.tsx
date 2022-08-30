@@ -1,6 +1,16 @@
 import React from "react";
 
-export const Timeline: React.FC<{ items: string[] }> = ({ items }) => {
+export const Timeline: React.FC<{
+  items: string[];
+  isMobile: boolean | null;
+}> = ({ items, isMobile }) => {
+  if (isMobile) {
+    return (
+      <div className="w-1 h-full bg-zinc-300 rounded-md relative flex">
+        <div className="w-full h-full flex justify-between absolute -top-1"></div>
+      </div>
+    );
+  }
   return (
     <div className="h-1 w-full bg-zinc-300 rounded-md relative flex">
       <div className="w-full h-full flex justify-between absolute -top-1">

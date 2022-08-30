@@ -61,15 +61,15 @@ export type ComposedBarLineData = {
   bar: number;
 }[];
 
-export type ProjectPageProps = {
+export type ProjectPageProps<T> = {
   title: string;
   description: string;
   url: string;
-  tech: TechProjectType[];
-  timeline: string[];
+  tech: TechProjectType<T>[];
+  timeline: T & string[];
 };
 
-export type TechProjectType = {
+export type TechProjectType<T> = T & {
   name: string; // The thing I used
   why: string; // Why I used it
 };
