@@ -1,18 +1,20 @@
-export const Timeline = () => {
-  return (
-    <div className="h-1 w-full bg-zinc-300 rounded-md relative flex"></div>
-  );
-};
+import React from "react";
 
-// TODO: based on idx, figure out left position offset
-const TimelineDot: React.FC<{ idx: number; name: string }> = ({
-  idx,
-  name,
-}) => {
+export const Timeline: React.FC<{ items: string[] }> = ({ items }) => {
   return (
-    <div className="w-fit">
-      <div className="w-3 h-3 rounded-full bg-zinc-400 hover:bg-indigo-400 absolute -top-1 left-[20px]" />
-      <span className="text-xs">this one</span>
+    <div className="h-1 w-full bg-zinc-300 rounded-md relative flex">
+      <div className="w-full h-full flex justify-between absolute -top-1">
+        {items.map((item, idx) => (
+          <TimelineDot name={item} key={`timeline-${idx}`} />
+        ))}
+      </div>
     </div>
   );
 };
+
+const TimelineDot: React.FC<{ name: string }> = ({ name }) => (
+  <div className="relative">
+    <div className="w-3 h-3 rounded-full bg-zinc-400 hover:bg-indigo-400" />
+    <p className="text-xs absolute top-1 text-zinc-400">{name}</p>
+  </div>
+);

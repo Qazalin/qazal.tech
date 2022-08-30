@@ -1,3 +1,4 @@
+import { time } from "console";
 import { useState } from "react";
 import { ProjectPageProps, TechProjectType } from "types";
 import { Timeline } from "./Timeline";
@@ -7,6 +8,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
   description,
   url,
   tech,
+  timeline,
 }) => {
   return (
     <>
@@ -16,7 +18,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
         {tech.map((t, i) => (
           <Tech {...t} key={`tech-${i}`} />
         ))}
-        <Timeline />
+        <Timeline items={timeline} />
       </div>
     </>
   );

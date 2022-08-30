@@ -66,6 +66,7 @@ export type ProjectPageProps = {
   description: string;
   url: string;
   tech: TechProjectType[];
+  timeline: string[];
 };
 
 export type TechProjectType = {
