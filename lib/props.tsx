@@ -181,7 +181,7 @@ export const mediaPrevProp: MediaPreviewProps = {
   platform: "twitch",
 };
 
-export const projectPageProps: ProjectPageProps = {
+export const projectPageProps: ProjectPageProps<{}> = {
   title: "zelda out Grafbase",
   description: `
         It all started out with an idea, if I was gonna re-build NFTGo's UI from

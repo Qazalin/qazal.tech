@@ -5,7 +5,7 @@ import { ProjectPageProps, TechProjectType } from "types";
 import { Timeline } from "./Timeline";
 
 export const ProjectPage: React.FC<
-  ProjectPageProps<{ isMobile: boolean | null }>
+  ProjectPageProps<{ isMobile?: boolean | null }>
 > = ({ title, description, url, tech, timeline }) => {
   const isMobile = useWindowBreakpoint(600);
   return (
