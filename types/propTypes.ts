@@ -60,3 +60,15 @@ export type ComposedBarLineData = {
   line: number;
   bar: number;
 }[];
+
+export type ProjectPageProps = {
+  title: string;
+  description: string;
+  url: string;
+  tech: TechProjectType[];
+};
+
+export type TechProjectType = {
+  name: string; // The thing I used
+  why: string; // Why I used it
+};

@@ -2,6 +2,7 @@ import { NFTGo, Thirdwave } from "components/icons";
 import {
   ContentPreviewProps,
   MediaPreviewProps,
+  ProjectPageProps,
   WorkStoryProps,
 } from "types/propTypes";
 
@@ -178,4 +179,24 @@ export const mediaPrevProp: MediaPreviewProps = {
   title: "Trying out Grafbase",
   svgTH: <GQL />,
   platform: "twitch",
+};
+
+export const projectPageProps: ProjectPageProps = {
+  title: "zelda out Grafbase",
+  description: `
+        It all started out with an idea, if I was gonna re-build NFTGo's UI from
+        scratch, and I had all the data available through an API, what would I
+        build. How would I visualize raw json responses?
+`,
+  url: "",
+  tech: [
+    {
+      name: "typescript",
+      why: "Type-safety always enhances my developer experience, TypeScript is like eating your veggies, you might not like it that much but you're definetly gonna get a lotta benefits from it",
+    },
+    {
+      name: "NextJs",
+      why: "This app needed specific pages for NFTs, collections and wallets. I heavily relied on NextJs for its very intuitive routing architecture and its great support for catching route params and using them for API calls",
+    },
+  ],
 };
