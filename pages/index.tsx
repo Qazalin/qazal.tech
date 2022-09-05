@@ -1,5 +1,4 @@
 import { gql } from "@apollo/client";
-import { Layout } from "components/Layout";
 import { client } from "gql/client";
 import type { GetStaticProps, InferGetStaticPropsType, NextPage } from "next";
 import { PostPreviewType } from "types";
@@ -11,11 +10,14 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   data,
 }) => {
   return (
-    <Layout>
-      {data.posts.map((p) => (
-        <PostPreview {...p} key={`post-${p.slug}`} />
+    <div className="prose dark:prose-invert space-y-4 w-full h-full max-w-5xl">
+      {data.posts.map((p, i) => (
+        <>
+          <PostPreview {...p} key={`post-${i}`} />
+          <hr />
+        </>
       ))}
-    </Layout>
+    </div>
   );
 };
 

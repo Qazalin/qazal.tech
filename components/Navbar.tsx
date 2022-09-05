@@ -1,6 +1,11 @@
+import { DarkModeSwitch } from "./DarkmodeSwitch";
+
 export const Navbar = () => {
   return (
     <div className="w-full h-full flex justify-between items-center px-2  md:px-5 relative">
+      <div className="w-8 h-8 absolute left-5">
+        <DarkModeSwitch />
+      </div>
       <div className="flex space-x-2 absolute right-4">
         <a
           href="https://twitter.com/qazalin"

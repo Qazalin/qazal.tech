@@ -1,14 +1,16 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import { ThemeProvider } from "next-themes";
-import "@fontsource/open-sans";
+import { Layout } from "components/Layout";
 import "@fontsource/poppins";
-import "@fontsource/jetbrains-mono";
+import "@fontsource/poppins/600.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider attribute="class">
-      <Component {...pageProps} />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </ThemeProvider>
   );
 }
