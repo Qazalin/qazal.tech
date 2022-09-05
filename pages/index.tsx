@@ -2,30 +2,34 @@ import { gql } from "@apollo/client";
 import { Layout } from "components/Layout";
 import { client } from "gql/client";
 import type { GetStaticProps, InferGetStaticPropsType, NextPage } from "next";
+import { PostPreviewType } from "types";
+import { PostPreview } from "components/PostPreview";
 
-type Data = {
-  post: string;
-};
-const Home: NextPage<InferGetStaticPropsType<Data>> = ({ data }) => {
-  console.log(data);
+type Posts = { posts: PostPreviewType[] };
+
+const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
+  data,
+}) => {
   return (
     <Layout>
-      <div>hello</div>
+      {data.posts.map((p) => (
+        <PostPreview {...p} key={`post-${p.slug}`} />
+      ))}
     </Layout>
   );
 };
 
 export default Home;
 
-/* 
-export const getStaticProps: GetStaticProps = async () => {
-  const { data } = await client.query({
+export const getStaticProps: GetStaticProps<{ data: Posts }> = async () => {
+  const { data } = await client.query<Posts>({
     query: gql`
       {
         posts {
           title
           date
           excerpt
+          slug
         }
       }
     `,
@@ -36,4 +40,3 @@ export const getStaticProps: GetStaticProps = async () => {
     },
   };
 };
-*/
