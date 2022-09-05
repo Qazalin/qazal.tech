@@ -6,9 +6,11 @@
     "start": "next start"
   },
   "dependencies": {
+    "@apollo/client": "^3.6.9",
     "@fontsource/jetbrains-mono": "^4.5.10",
     "@fontsource/open-sans": "^4.5.11",
     "@fontsource/poppins": "^4.5.9",
+    "graphql": "^16.6.0",
     "next": "latest",
     "next-seo": "^5.5.0",
     "next-themes": "^0.2.0",
