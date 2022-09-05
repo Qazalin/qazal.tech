@@ -3,8 +3,9 @@ import { client } from "gql/client";
 import type { GetStaticProps, InferGetStaticPropsType, NextPage } from "next";
 import { PostPreviewType } from "types";
 import { PostPreview } from "components/PostPreview";
+import { Fragment } from "react";
 
-type Posts = { posts: PostPreviewType[] };
+export type Posts = { posts: PostPreviewType[] };
 
 const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   data,
@@ -12,10 +13,10 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   return (
     <div className="prose dark:prose-invert space-y-4 w-full h-full max-w-5xl">
       {data.posts.map((p, i) => (
-        <>
-          <PostPreview {...p} key={`post-${i}`} />
+        <Fragment key={`post-${i}`}>
+          <PostPreview {...p} />
           <hr />
-        </>
+        </Fragment>
       ))}
     </div>
   );

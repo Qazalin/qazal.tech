@@ -25,10 +25,10 @@ export const DarkModeSwitch = ({}) => {
       <svg
         stroke="currentColor"
         fill="none"
-        stroke-width="2"
+        strokeWidth="2"
         viewBox="0 0 24 24"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
         onClick={switchTheme}
         xmlns="http://www.w3.org/2000/svg"
         className={`cursor-pointer stroke-gray-700 hover:stroke-black hover:bg-gray-300 dark:stroke-gray-200 text-4xl dark:hover:bg-gray-800 p-1 rounded-lg transition-colors w-full h-full`}
@@ -48,10 +48,10 @@ export const DarkModeSwitch = ({}) => {
     <svg
       stroke="currentColor"
       fill="none"
-      stroke-width="2"
+      strokeWidth="2"
       viewBox="0 0 24 24"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeLinecap="round"
+      strokeLinejoin="round"
       onClick={switchTheme}
       xmlns="http://www.w3.org/2000/svg"
       className={`cursor-pointer stroke-gray-700 hover:stroke-black hover:bg-gray-300 dark:stroke-gray-200 text-4xl dark:hover:bg-gray-800 p-1 rounded-lg transition-colors w-full h-full`}
