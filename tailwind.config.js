@@ -1,11 +1,18 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: "class",
   content: [
-    './pages/**/*.{js,ts,jsx,tsx}',
-    './components/**/*.{js,ts,jsx,tsx}',
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ["Open Sans", "sans-serif"],
+        heading: ["Poppins", "sans-serif"],
+        mono: ["JetBrains Mono", "monospace"],
+      },
+    },
   },
-  plugins: [],
-}
+  plugins: [require("@tailwindcss/typography")],
+};
