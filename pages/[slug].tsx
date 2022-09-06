@@ -1,16 +1,12 @@
 import { gql } from "@apollo/client";
+import { PostLayout } from "components/PostLayout";
 import { client } from "gql/client";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { ParsedUrlQuery } from "querystring";
-import { AllPostsType, SinglePostType } from "types";
+import { AllPostsType, PostType, SinglePostType } from "types";
 
-export default function Post({ post }: { post: SinglePostType }) {
-  console.log(post);
-  return (
-    <div>
-      <h1>im a post</h1>
-    </div>
-  );
+export default function Post({ post }: { post: PostType }) {
+  return <PostLayout post={post} />;
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
