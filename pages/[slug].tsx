@@ -40,9 +40,7 @@ export const getStaticProps: GetStaticProps<
       query get($slug: String) {
         post(where: { slug: $slug }) {
           title
-          content {
-            markdown
-          }
+          content
           date
           coverImage {
             url
@@ -56,16 +54,13 @@ export const getStaticProps: GetStaticProps<
   });
 
   // Serialize MDX content
-  const mdxSource = await serialize(data.post.content.markdown, {
+  const mdxSource = await serialize(data.post.content, {
     mdxOptions: { rehypePlugins: [rehypeHighlight] },
   });
 
   const post: SerializedPost = {
     ...data.post,
-    content: {
-      mdxSource,
-      markdown: data.post.content.markdown,
-    },
+    mdxSource,
   };
 
   return {

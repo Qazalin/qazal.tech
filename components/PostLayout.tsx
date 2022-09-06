@@ -1,6 +1,14 @@
 import { PostType, SerializedPost, SinglePostType } from "types";
 import Image from "next/future/image";
 import { MDXRemote } from "next-mdx-remote";
+import "highlight.js/styles/tokyo-night-dark.css";
+import hljs from "highlight.js";
+import javascript from "highlight.js/lib/languages/javascript";
+import python from "highlight.js/lib/languages/python";
+import go from "highlight.js/lib/languages/go";
+hljs.registerLanguage("javascript", javascript);
+hljs.registerLanguage("python", python);
+hljs.registerLanguage("go", go);
 
 export const PostLayout: React.FC<{ post: SerializedPost }> = ({ post }) => {
   return (
@@ -17,8 +25,8 @@ export const PostLayout: React.FC<{ post: SerializedPost }> = ({ post }) => {
           <h1>{post.title}</h1>
         </div>
       </div>
-      <div className="w-full h-full">
-        <MDXRemote {...post.content.mdxSource} />
+      <div className="w-full h-full px-2">
+        <MDXRemote {...post.mdxSource} />
       </div>
     </div>
   );
