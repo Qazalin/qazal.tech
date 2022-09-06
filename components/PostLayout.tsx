@@ -6,13 +6,17 @@ import hljs from "highlight.js";
 import javascript from "highlight.js/lib/languages/javascript";
 import python from "highlight.js/lib/languages/python";
 import go from "highlight.js/lib/languages/go";
+import { CodeBlock } from "./CodeBlock";
 hljs.registerLanguage("javascript", javascript);
 hljs.registerLanguage("python", python);
 hljs.registerLanguage("go", go);
 
 export const PostLayout: React.FC<{ post: SerializedPost }> = ({ post }) => {
+  const components = {
+    pre: CodeBlock,
+  };
   return (
-    <div className="prose dark:prose-invert space-y-4 h-full max-w-5xl w-full">
+    <div className="prose dark:prose-invert space-y-4 h-full max-w-5xl w-full px-5">
       <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-2">
         <Image
           src={post.coverImage.url}
@@ -25,8 +29,8 @@ export const PostLayout: React.FC<{ post: SerializedPost }> = ({ post }) => {
           <h1>{post.title}</h1>
         </div>
       </div>
-      <div className="w-full h-full px-2">
-        <MDXRemote {...post.mdxSource} />
+      <div className="w-full h-full">
+        <MDXRemote {...post.mdxSource} components={components} />
       </div>
     </div>
   );
