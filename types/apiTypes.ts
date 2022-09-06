@@ -1,3 +1,5 @@
+import { MDXRemoteSerializeResult } from "next-mdx-remote";
+
 export interface PostPreviewType {
   title: string;
   slug: string;
@@ -17,3 +19,12 @@ export type PostType = PostPreviewType & {
 export type AllPostsType = { posts: PostPreviewType[] };
 
 export type SinglePostType = { post: PostType };
+
+export type SerializedPost = PostType & {
+  content: {
+    mdxSource: MDXRemoteSerializeResult<
+      Record<string, unknown>,
+      Record<string, string>
+    >;
+  };
+};

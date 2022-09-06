@@ -1,7 +1,8 @@
-import { PostType, SinglePostType } from "types";
+import { PostType, SerializedPost, SinglePostType } from "types";
 import Image from "next/future/image";
+import { MDXRemote } from "next-mdx-remote";
 
-export const PostLayout: React.FC<{ post: PostType }> = ({ post }) => {
+export const PostLayout: React.FC<{ post: SerializedPost }> = ({ post }) => {
   return (
     <div className="prose dark:prose-invert space-y-4 h-full max-w-5xl w-full">
       <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-2">
@@ -16,7 +17,9 @@ export const PostLayout: React.FC<{ post: PostType }> = ({ post }) => {
           <h1>{post.title}</h1>
         </div>
       </div>
-      <div className="w-full h-full">{post.content.markdown}</div>
+      <div className="w-full h-full">
+        <MDXRemote {...post.content.mdxSource} />
+      </div>
     </div>
   );
 };

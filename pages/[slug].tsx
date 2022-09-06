@@ -3,9 +3,11 @@ import { PostLayout } from "components/PostLayout";
 import { client } from "gql/client";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { ParsedUrlQuery } from "querystring";
-import { AllPostsType, PostType, SinglePostType } from "types";
+import { AllPostsType, PostType, SerializedPost, SinglePostType } from "types";
+import { serialize } from "next-mdx-remote/serialize";
+import rehypeHighlight from "rehype-highlight";
 
-export default function Post({ post }: { post: PostType }) {
+export default function Post({ post }: { post: SerializedPost }) {
   return <PostLayout post={post} />;
 }
 
@@ -30,10 +32,9 @@ interface StaticPaths extends ParsedUrlQuery {
   slug: string;
 }
 export const getStaticProps: GetStaticProps<
-  SinglePostType,
+  { post: SerializedPost },
   StaticPaths
 > = async ({ params }) => {
-  console.log(params?.slug);
   const { data } = await client.query<SinglePostType>({
     query: gql`
       query get($slug: String) {
@@ -54,9 +55,22 @@ export const getStaticProps: GetStaticProps<
     },
   });
 
+  // Serialize MDX content
+  const mdxSource = await serialize(data.post.content.markdown, {
+    mdxOptions: { rehypePlugins: [rehypeHighlight] },
+  });
+
+  const post: SerializedPost = {
+    ...data.post,
+    content: {
+      mdxSource,
+      markdown: data.post.content.markdown,
+    },
+  };
+
   return {
     props: {
-      post: data.post,
+      post,
     },
   };
 };
