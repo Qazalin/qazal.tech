@@ -1,16 +1,31 @@
 import { gql } from "@apollo/client";
 import { PostLayout } from "components/PostLayout";
 import { client } from "gql/client";
-import { GetStaticPaths, GetStaticProps } from "next";
+import {
+  GetStaticPaths,
+  GetStaticProps,
+  InferGetStaticPropsType,
+  NextPage,
+} from "next";
 import { ParsedUrlQuery } from "querystring";
-import { AllPostsType, PostType, SerializedPost, SinglePostType } from "types";
+import { AllPostsType, SEOType, SerializedPost } from "types";
 import { serialize } from "next-mdx-remote/serialize";
 import rehypeHighlight from "rehype-highlight";
-import { getPostBySlug } from "gql/queries";
+import { getPostBySlug, getSEOBySlug } from "gql/queries";
+import { Page } from "components/Page";
 
-export default function Post({ post }: { post: SerializedPost }) {
-  return <PostLayout post={post} />;
-}
+const Post: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
+  post,
+  seo,
+}) => {
+  return (
+    <Page seo={seo}>
+      <PostLayout post={post} />
+    </Page>
+  );
+};
+
+export default Post;
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const { data } = await client.query<AllPostsType>({
@@ -33,10 +48,11 @@ interface StaticPaths extends ParsedUrlQuery {
   slug: string;
 }
 export const getStaticProps: GetStaticProps<
-  { post: SerializedPost },
+  { post: SerializedPost; seo: SEOType },
   StaticPaths
 > = async ({ params }) => {
   const data = await getPostBySlug(params?.slug);
+  const seo = await getSEOBySlug("/" + params?.slug);
 
   // Serialize MDX content
   const mdxSource = await serialize(data.content, {
@@ -51,6 +67,7 @@ export const getStaticProps: GetStaticProps<
   return {
     props: {
       post,
+      seo,
     },
   };
 };

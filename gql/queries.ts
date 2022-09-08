@@ -40,10 +40,10 @@ export async function getPostBySlug(slug?: string): Promise<PostType> {
 }
 
 export async function getSEOBySlug(slug?: string): Promise<SEOType> {
-  const { data } = await client.query<{ seo: SEOType }>({
+  const { data, error } = await client.query<{ seo: SEOType }>({
     query: gql`
-      query SEO {
-        seo(where: { parentSlug: "/" }) {
+      query SEO($slug: String) {
+        seo(where: { parentSlug: $slug }) {
           title
           image {
             url
@@ -52,6 +52,9 @@ export async function getSEOBySlug(slug?: string): Promise<SEOType> {
         }
       }
     `,
+    variables: {
+      slug: slug,
+    },
   });
   return data.seo;
 }

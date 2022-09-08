@@ -35,7 +35,7 @@ export const getStaticProps: GetStaticProps<{
   return {
     props: {
       posts,
-      seo,
+      seo: seo,
     },
   };
 };
