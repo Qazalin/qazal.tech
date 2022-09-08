@@ -6,6 +6,7 @@ import { ParsedUrlQuery } from "querystring";
 import { AllPostsType, PostType, SerializedPost, SinglePostType } from "types";
 import { serialize } from "next-mdx-remote/serialize";
 import rehypeHighlight from "rehype-highlight";
+import { getPostBySlug } from "gql/queries";
 
 export default function Post({ post }: { post: SerializedPost }) {
   return <PostLayout post={post} />;
@@ -35,31 +36,15 @@ export const getStaticProps: GetStaticProps<
   { post: SerializedPost },
   StaticPaths
 > = async ({ params }) => {
-  const { data } = await client.query<SinglePostType>({
-    query: gql`
-      query get($slug: String) {
-        post(where: { slug: $slug }) {
-          title
-          content
-          date
-          coverImage {
-            url
-          }
-        }
-      }
-    `,
-    variables: {
-      slug: params?.slug,
-    },
-  });
+  const data = await getPostBySlug(params?.slug);
 
   // Serialize MDX content
-  const mdxSource = await serialize(data.post.content, {
+  const mdxSource = await serialize(data.content, {
     mdxOptions: { rehypePlugins: [rehypeHighlight] },
   });
 
   const post: SerializedPost = {
-    ...data.post,
+    ...data,
     mdxSource,
   };
 

@@ -24,3 +24,11 @@ export type SerializedPost = PostType & {
     Record<string, string>
   >;
 };
+
+export type SEOType = {
+  title: string;
+  description: string;
+  image: {
+    url: string;
+  };
+};
