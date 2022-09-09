@@ -41,7 +41,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
   return {
     paths: data.posts.map((p) => `/${p.slug}`),
     fallback: false,
-    revalidate: 60 * 60 * 24,
   };
 };
 
