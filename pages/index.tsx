@@ -37,5 +37,6 @@ export const getStaticProps: GetStaticProps<{
       posts,
       seo: seo,
     },
+    revalidate: 60 * 60 * 24,
   };
 };

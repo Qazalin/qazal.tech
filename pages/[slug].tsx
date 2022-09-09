@@ -41,6 +41,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   return {
     paths: data.posts.map((p) => `/${p.slug}`),
     fallback: false,
+    revalidate: 60 * 60 * 24,
   };
 };
 
@@ -69,5 +70,6 @@ export const getStaticProps: GetStaticProps<
       post,
       seo,
     },
+    revalidate: 60 * 60 * 24,
   };
 };
