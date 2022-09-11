@@ -11,7 +11,7 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
 }) => {
   return (
     <Page seo={seo}>
-      <div className="prose dark:prose-invert space-y-4 w-full h-full max-w-5xl">
+      <div className="prose dark:prose-invert space-y-4 w-full h-full max-w-5xl mb-5">
         {[...posts].reverse().map((p, i) => (
           <Fragment key={`post-${i}`}>
             <PostPreview {...p} />

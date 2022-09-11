@@ -16,7 +16,7 @@ export const PostLayout: React.FC<{ post: SerializedPost }> = ({ post }) => {
     pre: CodeBlock,
   };
   return (
-    <div className="prose dark:prose-invert space-y-4 h-full max-w-5xl w-full px-5">
+    <div className="prose dark:prose-invert space-y-4 max-w-5xl w-full px-5 h-auto">
       <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-2">
         <Image
           src={post.coverImage.url}
