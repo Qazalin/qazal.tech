@@ -1,1 +1,2 @@
 User-agent: *
+Sitemap: https://qazal.tech/sitemap.xml
