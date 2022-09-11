@@ -31,4 +31,5 @@ export type SEOType = {
   image: {
     url: string;
   };
+  keywords: string[];
 };

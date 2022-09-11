@@ -1,7 +1,6 @@
 import { MDXCustomComponent } from "types";
 
 export const CodeBlock: MDXCustomComponent = (props) => {
-  console.log(props);
   return (
     <div className="w-full relative">
       <pre

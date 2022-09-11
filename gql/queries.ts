@@ -49,6 +49,7 @@ export async function getSEOBySlug(slug?: string): Promise<SEOType> {
             url
           }
           description
+          keywords
         }
       }
     `,

@@ -13,6 +13,7 @@ import { serialize } from "next-mdx-remote/serialize";
 import rehypeHighlight from "rehype-highlight";
 import { getPostBySlug, getSEOBySlug } from "gql/queries";
 import { Page } from "components/Page";
+import remarkGfm from "remark-gfm";
 
 const Post: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   post,
@@ -56,7 +57,7 @@ export const getStaticProps: GetStaticProps<
 
   // Serialize MDX content
   const mdxSource = await serialize(data.content, {
-    mdxOptions: { rehypePlugins: [rehypeHighlight] },
+    mdxOptions: { rehypePlugins: [rehypeHighlight, remarkGfm] },
   });
 
   const post: SerializedPost = {
