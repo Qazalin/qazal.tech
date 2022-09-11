@@ -1,6 +1,7 @@
 import { SEOType } from "types";
 import { NextSeo, DefaultSeo } from "next-seo";
 import { PropsWithChildren } from "react";
+import Script from "next/script";
 
 export const Page: React.FC<PropsWithChildren<{ seo: SEOType }>> = ({
   seo,
@@ -8,6 +9,20 @@ export const Page: React.FC<PropsWithChildren<{ seo: SEOType }>> = ({
 }) => {
   return (
     <>
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-G90V1P0JHJ"
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-G90V1P0JHJ');
+      `}
+      </Script>
+
       <DefaultSeo
         openGraph={{
           type: "website",
@@ -25,10 +40,9 @@ export const Page: React.FC<PropsWithChildren<{ seo: SEOType }>> = ({
             name: "viewport",
             content: "width=device-width, initial-scale=1.0",
           },
-
           {
             name: "keywords",
-            content: seo.keywords,
+            content: seo.keywords.join(" "),
           },
         ]}
       />
